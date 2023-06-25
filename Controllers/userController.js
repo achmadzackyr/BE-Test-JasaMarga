@@ -2,6 +2,8 @@ const bcrypt = require("bcrypt");
 const db = require("../Models");
 const jwt = require("jsonwebtoken");
 const { validationResult } = require('express-validator');
+const multer = require('multer')
+const readXlsxFile = require('read-excel-file/node')
 
 // Assigning users to the variable User
 const User = db.users;
@@ -61,7 +63,6 @@ const register = async (req, res) => {
 
 
 //login authentication
-
 const login = async (req, res) => {
     try {
         // Finds the validation errors in this request and wraps them in an object with handy functions
@@ -131,7 +132,60 @@ const login = async (req, res) => {
     }
 };
 
+const importUser = async (req, res, next) => {
+    try {
+        //get file path
+        let path = req.file.path;
+        let userList = [];
+
+        readXlsxFile(path).then((rows) => {
+            //remove table header
+            rows.shift()
+            rows.forEach(r => {
+                userList.push({
+                    fullname: r[1],
+                    username: r[2],
+                    password: bcrypt.hashSync(r[3].toString(), 10),
+                    created_by: 'SYSTEM',
+                    updated_by: 'SYSTEM',
+                    created_at: Date.now(),
+                    updated_at: Date.now()
+                });
+            });
+
+            //return list of user
+            return userList;
+        }).then((users) => {
+            //bulk saving the user
+            User.bulkCreate(users, { returning: true, ignoreDuplicates: true }).then(function (user) {
+                return res.status(200).send({
+                    success: true,
+                    message: 'User was imported successfully',
+                    data: {
+                        user
+                    }
+                });
+            }).catch(function (err) {
+                console.log(err);
+                return res.status(500).send({
+                    success: false,
+                    message: err,
+                    data: null
+                });
+            });
+        })
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send({
+            success: false,
+            message: error.message,
+            data: null
+        });
+    }
+};
+
 module.exports = {
     register,
     login,
+    importUser
 };

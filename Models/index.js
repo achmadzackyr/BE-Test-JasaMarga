@@ -1,5 +1,5 @@
 //importing modules
-const {Sequelize, DataTypes} = require('sequelize')
+const { Sequelize, DataTypes } = require('sequelize')
 
 //Database connection with dialect of postgres specifying the database we are using
 //const sequelize = new Sequelize(`postgres://postgres:123456@localhost:5433/betest`, {dialect: "postgres"})
@@ -32,7 +32,11 @@ db.Sequelize = Sequelize
 db.sequelize = sequelize
 
 //connecting to model
-db.users = require('./userModel') (sequelize, DataTypes)
+db.users = require('./userModel')(sequelize, DataTypes)
+db.ruas = require('./ruasModel')(sequelize, DataTypes)
+db.ruasCoordinates = require('./ruasCoordinatesModel')(sequelize, DataTypes)
+
+db.ruas.hasMany(db.ruasCoordinates, { foreignKey: 'ruas_id' })
 
 //exporting the module
 module.exports = db

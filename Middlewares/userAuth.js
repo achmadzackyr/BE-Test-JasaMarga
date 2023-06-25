@@ -1,6 +1,8 @@
 const express = require("express");
 const db = require("../Models");
 const { body } = require('express-validator')
+const jwt = require("jsonwebtoken");
+
 //Assigning db.users to User variable
 const User = db.users;
 
@@ -45,9 +47,34 @@ const loginValidation = [
     body('password', "Password is required").exists().trim().notEmpty(),
 ];
 
+const verifyToken = async (req, res, next) => {
+    let token = req.headers["x-access-token"];
+
+    if (!token) {
+        return res.status(403).send({
+            success: false,
+            message: "No token provided",
+            data: null
+        });
+    }
+
+    jwt.verify(token, process.env.secret_key, (err, decoded) => {
+        if (err) {
+            return res.status(401).send({
+                success: false,
+                message: "Unauthorized",
+                data: null
+            });
+        }
+        req.userId = decoded.id;
+        next();
+    });
+};
+
 //exporting module
 module.exports = {
     saveUser,
     registerValidation,
-    loginValidation
+    loginValidation,
+    verifyToken
 };

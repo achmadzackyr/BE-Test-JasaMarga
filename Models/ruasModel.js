@@ -1,20 +1,19 @@
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define("user", {
-        fullname: {
+    const Ruas = sequelize.define("ruas", {
+        ruas: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
-        },
-        password: {
+        km_awal: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        last_login: {
-            type: DataTypes.DATE
+        km_akhir: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        status: {
+            type: DataTypes.BOOLEAN
         },
         created_by: {
             type: DataTypes.STRING
@@ -27,5 +26,5 @@ module.exports = (sequelize, DataTypes) => {
         createdAt: 'created_at',
         updatedAt: 'updated_at'
     },)
-    return User
+    return Ruas
 }
