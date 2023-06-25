@@ -134,11 +134,27 @@ const login = async (req, res) => {
 
 const importUser = async (req, res, next) => {
     try {
+        if (!req.file) {
+            return res.status(500).send({
+                success: false,
+                message: "Template file is required",
+                data: null
+            });
+        }
+
         //get file path
-        let path = req.file.path;
+        let filePath = req.file.path;
+        if (req.file.mimetype != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
+            return res.status(400).send({
+                success: false,
+                message: "Only accept .xlsx file",
+                data: null
+            });
+        }
+
         let userList = [];
 
-        readXlsxFile(path).then((rows) => {
+        readXlsxFile(filePath).then((rows) => {
             //remove table header
             rows.shift()
             rows.forEach(r => {
