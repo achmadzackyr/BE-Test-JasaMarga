@@ -8,16 +8,16 @@ const RuasCoordinate = db.ruasCoordinates;
 
 const create = async (req, res) => {
     try {
-        // Finds the validation errors in this request and wraps them in an object with handy functions
-        //const errors = validationResult(req);
+        //Finds the validation errors in this request and wraps them in an object with handy functions
+        const errors = validationResult(req);
 
-        // if (!errors.isEmpty()) {
-        //     return res.status(400).send({
-        //         success: false,
-        //         message: 'Invalid request',
-        //         data: errors.array()
-        //     });
-        // }
+        if (!errors.isEmpty()) {
+            return res.status(400).send({
+                success: false,
+                message: 'Invalid request',
+                data: errors.array()
+            });
+        }
 
         const { ruas, km_awal, km_akhir } = req.body;
         const data = {
@@ -25,8 +25,8 @@ const create = async (req, res) => {
             km_awal,
             km_akhir,
             status: true,
-            created_by: 'SYSTEM',
-            updated_by: 'SYSTEM',
+            created_by: req.username,
+            updated_by: req.username,
             created_at: Date.now(),
             updated_at: Date.now()
         };

@@ -90,9 +90,9 @@ const login = async (req, res) => {
             const isSame = await bcrypt.compare(password, user.password);
 
             //if password is the same
-            //generate token with the user's id and the secret_key in the env file
+            //generate token with the user's username and the secret_key in the env file
             if (isSame) {
-                let token = jwt.sign({ id: user.id }, process.env.secret_key, {
+                let token = jwt.sign({ id: user.username }, process.env.secret_key, {
                     expiresIn: 1 * 24 * 60 * 60 * 1000,
                 });
 
@@ -146,8 +146,8 @@ const importUser = async (req, res, next) => {
                     fullname: r[1],
                     username: r[2],
                     password: bcrypt.hashSync(r[3].toString(), 10),
-                    created_by: 'SYSTEM',
-                    updated_by: 'SYSTEM',
+                    created_by: req.username,
+                    updated_by: req.username,
                     created_at: Date.now(),
                     updated_at: Date.now()
                 });

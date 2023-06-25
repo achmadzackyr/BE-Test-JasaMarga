@@ -4,6 +4,7 @@ const dotenv = require('dotenv').config()
 const bodyParser = require("body-parser");
 const db = require('./Models')
 const userRoutes = require('./Routes/userRoutes')
+const ruasRoutes = require('./Routes/ruasRoutes')
 
 //setting up your port
 const PORT = process.env.port || 3000
@@ -24,6 +25,9 @@ db.sequelize.sync({ force: true }).then(() => {
 
 //routes for the user API
 app.use('/api/users', userRoutes)
+
+//routes for the ruas API
+app.use('/api/ruas', ruasRoutes)
 
 //listening to server connection
 app.listen(PORT, () => console.log(`Server is connected on ${PORT}`))
