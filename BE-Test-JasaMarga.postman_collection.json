@@ -766,15 +766,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "490"
+									"value": "834"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"1ea-HPZ2LznmUxGsL5/+WYCxtKbyIK4\""
+									"value": "W/\"342-PWAxbx/BVkfynGMYUQajVWJCrWM\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 25 Jun 2023 15:22:52 GMT"
+									"value": "Mon, 26 Jun 2023 01:19:35 GMT"
 								},
 								{
 									"key": "Connection",
@@ -786,7 +786,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas record list\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"ruas\": \"Pekanbaru - Dumai\",\n            \"km_awal\": \"0\",\n            \"km_akhir\": \"100\",\n            \"status\": true,\n            \"created_by\": \"achmadzackyr\",\n            \"updated_by\": \"achmadzackyr\",\n            \"created_at\": \"2023-06-25T15:21:15.503Z\",\n            \"updated_at\": \"2023-06-25T15:21:15.503Z\"\n        },\n        {\n            \"id\": 2,\n            \"ruas\": \"Pekanbaru - Dumai\",\n            \"km_awal\": \"101\",\n            \"km_akhir\": \"200\",\n            \"status\": true,\n            \"created_by\": \"achmadzackyr\",\n            \"updated_by\": \"achmadzackyr\",\n            \"created_at\": \"2023-06-25T15:22:42.829Z\",\n            \"updated_at\": \"2023-06-25T15:22:42.829Z\"\n        }\n    ]\n}"
+							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas record list\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"ruas\": \"Pekanbaru - Dumai\",\n            \"km_awal\": \"0\",\n            \"km_akhir\": \"100\",\n            \"status\": true,\n            \"created_by\": \"achmadzackyr\",\n            \"updated_by\": \"achmadzackyr\",\n            \"created_at\": \"2023-06-26T01:19:30.311Z\",\n            \"updated_at\": \"2023-06-26T01:19:30.311Z\",\n            \"ruasCoordinates\": [\n                {\n                    \"id\": 1,\n                    \"coordinates\": \"100,-10\",\n                    \"created_by\": \"achmadzackyr\",\n                    \"updated_by\": \"achmadzackyr\",\n                    \"created_at\": \"2023-06-26T01:19:30.320Z\",\n                    \"updated_at\": \"2023-06-26T01:19:30.320Z\",\n                    \"ruas_id\": 1\n                },\n                {\n                    \"id\": 2,\n                    \"coordinates\": \"110, 20\",\n                    \"created_by\": \"achmadzackyr\",\n                    \"updated_by\": \"achmadzackyr\",\n                    \"created_at\": \"2023-06-26T01:19:30.320Z\",\n                    \"updated_at\": \"2023-06-26T01:19:30.320Z\",\n                    \"ruas_id\": 1\n                },\n                {\n                    \"id\": 3,\n                    \"coordinates\": \"120, 40\",\n                    \"created_by\": \"achmadzackyr\",\n                    \"updated_by\": \"achmadzackyr\",\n                    \"created_at\": \"2023-06-26T01:19:30.320Z\",\n                    \"updated_at\": \"2023-06-26T01:19:30.320Z\",\n                    \"ruas_id\": 1\n                }\n            ]\n        }\n    ]\n}"
 						},
 						{
 							"name": "Read All Ruas No Record",
@@ -909,15 +909,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "267"
+									"value": "830"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"10b-a2CbnaWdPnvsnovcrpgMQMXGuB8\""
+									"value": "W/\"33e-Bofk2p2yfvgI6Az6//KrKFrkWG0\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 25 Jun 2023 15:25:48 GMT"
+									"value": "Mon, 26 Jun 2023 01:19:44 GMT"
 								},
 								{
 									"key": "Connection",
@@ -929,7 +929,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas was found\",\n    \"data\": {\n        \"id\": 1,\n        \"ruas\": \"Pekanbaru - Dumai\",\n        \"km_awal\": \"0\",\n        \"km_akhir\": \"100\",\n        \"status\": true,\n        \"created_by\": \"achmadzackyr\",\n        \"updated_by\": \"achmadzackyr\",\n        \"created_at\": \"2023-06-25T15:21:15.503Z\",\n        \"updated_at\": \"2023-06-25T15:21:15.503Z\"\n    }\n}"
+							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas was found\",\n    \"data\": {\n        \"id\": 1,\n        \"ruas\": \"Pekanbaru - Dumai\",\n        \"km_awal\": \"0\",\n        \"km_akhir\": \"100\",\n        \"status\": true,\n        \"created_by\": \"achmadzackyr\",\n        \"updated_by\": \"achmadzackyr\",\n        \"created_at\": \"2023-06-26T01:19:30.311Z\",\n        \"updated_at\": \"2023-06-26T01:19:30.311Z\",\n        \"ruasCoordinates\": [\n            {\n                \"id\": 1,\n                \"coordinates\": \"100,-10\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-26T01:19:30.320Z\",\n                \"updated_at\": \"2023-06-26T01:19:30.320Z\",\n                \"ruas_id\": 1\n            },\n            {\n                \"id\": 2,\n                \"coordinates\": \"110, 20\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-26T01:19:30.320Z\",\n                \"updated_at\": \"2023-06-26T01:19:30.320Z\",\n                \"ruas_id\": 1\n            },\n            {\n                \"id\": 3,\n                \"coordinates\": \"120, 40\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-26T01:19:30.320Z\",\n                \"updated_at\": \"2023-06-26T01:19:30.320Z\",\n                \"ruas_id\": 1\n            }\n        ]\n    }\n}"
 						},
 						{
 							"name": "Read One Ruas Not Found",
@@ -1005,7 +1005,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"0\",\r\n    \"km_akhir\": \"100\"\r\n}",
+							"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"0\",\r\n    \"km_akhir\": \"100\",\r\n    \"coordinates\": [\"100,-10\", \"110, 20\", \"120, 40\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1176,7 +1176,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"50\",\r\n    \"km_akhir\": \"100\",\r\n    \"status\": true\r\n}",
+							"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"50\",\r\n    \"km_akhir\": \"100\",\r\n    \"status\": true,\r\n    \"coordinates\": [\"200,-10\", \"210, 20\", \"220, 40\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1210,7 +1210,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"50\",\r\n    \"km_akhir\": \"100\",\r\n    \"status\": true\r\n}",
+									"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"50\",\r\n    \"km_akhir\": \"100\",\r\n    \"status\": true,\r\n    \"coordinates\": [\"200,-10\", \"210, 20\", \"220, 40\"]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1244,15 +1244,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "285"
+									"value": "755"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"11d-16WTwpVhSzD71ZKExFKHOCzw+sU\""
+									"value": "W/\"2f3-9zTv/dWPYIOYwYSbDaRNXlSJv6s\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 25 Jun 2023 15:26:48 GMT"
+									"value": "Mon, 26 Jun 2023 01:32:16 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1264,7 +1264,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas was udpated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"ruas\": \"Pekanbaru - Dumai\",\n        \"km_awal\": \"50\",\n        \"km_akhir\": \"100\",\n        \"status\": \"true\",\n        \"created_by\": \"achmadzackyr\",\n        \"updated_by\": \"achmadzackyr\",\n        \"created_at\": \"2023-06-25T15:21:15.503Z\",\n        \"updated_at\": \"2023-06-25T15:26:48.553Z\"\n    }\n}"
+							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas was udpated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"ruas\": \"Pekanbaru - Dumai\",\n        \"km_awal\": \"50\",\n        \"km_akhir\": \"100\",\n        \"status\": \"true\",\n        \"created_by\": \"achmadzackyr\",\n        \"updated_by\": \"achmadzackyr\",\n        \"created_at\": \"2023-06-26T01:32:10.188Z\",\n        \"updated_at\": \"2023-06-26T01:32:16.691Z\",\n        \"ruasCoordinates\": [\n            {\n                \"ruas_id\": \"1\",\n                \"coordinates\": \"200,-10\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": 1687743136693,\n                \"updated_at\": 1687743136693\n            },\n            {\n                \"ruas_id\": \"1\",\n                \"coordinates\": \"210, 20\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": 1687743136693,\n                \"updated_at\": 1687743136693\n            },\n            {\n                \"ruas_id\": \"1\",\n                \"coordinates\": \"220, 40\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": 1687743136693,\n                \"updated_at\": 1687743136693\n            }\n        ]\n    }\n}"
 						},
 						{
 							"name": "Update Ruas Not Found",
