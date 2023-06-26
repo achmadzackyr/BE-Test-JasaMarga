@@ -1,0 +1,1522 @@
+{
+	"info": {
+		"_postman_id": "07b775a4-3134-436d-b1a0-c060346b7160",
+		"name": "BE-Test-JasaMarga",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7539230",
+		"_collection_link": "https://bold-shuttle-391440.postman.co/workspace/My-Workspace~e443c7bf-4b5d-4035-8007-198b55b61bc5/collection/7539230-07b775a4-3134-436d-b1a0-c060346b7160?action=share&creator=7539230&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"Achmad Zacky Rachmatullah\",\r\n    \"username\": \"achmadzackyr\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\": \"Achmad Zacky Rachmatullah\",\r\n    \"username\": \"achmadzackyr\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "367"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16f-Z0wWcOdGM40vlBNE02kb5R0NIp4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 14:48:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User was registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"fullname\": \"Achmad Zacky Rachmatullah\",\n            \"username\": \"achmadzackyr\",\n            \"password\": \"$2b$10$LfYPN65m1zyVG7BLZG9I3ueWbWMxGLxaNNC92/kNZUCwjXNh9ZSPe\",\n            \"created_by\": \"SYSTEM\",\n            \"updated_by\": \"SYSTEM\",\n            \"created_at\": \"2023-06-25T14:48:17.847Z\",\n            \"updated_at\": \"2023-06-25T14:48:17.849Z\",\n            \"last_login\": null\n        }\n    }\n}"
+						},
+						{
+							"name": "Register Invalid Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\": \"Achmad Zacky Rachmatullah\",\r\n    \"username\": \"ac\",\r\n    \"password\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11d-DBl9GoAAryF1wCm6A2ZRRxJFU9M\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 14:48:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid request\",\n    \"data\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"ac\",\n            \"msg\": \"Username minimum length is 3 characters\",\n            \"path\": \"username\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"12345\",\n            \"msg\": \"Password minimum length is 6 characters\",\n            \"path\": \"password\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Register Username Taken",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\": \"Achmad Zacky Rachmatullah\",\r\n    \"username\": \"achmadzackyr\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-6qXJdLGyB0I+oIGUpfCX9h1uhvY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 14:49:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Username already taken\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set('token', jsonData.data.accessToken)  "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"achmadzackyr\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"achmadzackyr\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "556"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22c-FsTUNgJjW2WRLvwmXcTylMwzK48\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 14:49:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"fullname\": \"Achmad Zacky Rachmatullah\",\n            \"username\": \"achmadzackyr\",\n            \"password\": \"$2b$10$LfYPN65m1zyVG7BLZG9I3ueWbWMxGLxaNNC92/kNZUCwjXNh9ZSPe\",\n            \"last_login\": \"2023-06-25T14:49:34.520Z\",\n            \"created_by\": \"SYSTEM\",\n            \"updated_by\": \"SYSTEM\",\n            \"created_at\": \"2023-06-25T14:48:17.847Z\",\n            \"updated_at\": \"2023-06-25T14:49:34.521Z\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjaG1hZHphY2t5ciIsImlhdCI6MTY4NzcwNDU3NCwiZXhwIjoxNzc0MTA0NTc0fQ.rE5a00-sUGdssoRpGws5lf_f8i5BYjknUrIa3dPrLDM\"\n    }\n}"
+						},
+						{
+							"name": "Login Invalid Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"ac\",\r\n    \"password\": \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "284"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11c-iU35OjnjRIMOFcbBnakbIPBX/KI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 14:49:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid request\",\n    \"data\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"ac\",\n            \"msg\": \"Username minimum length is 3 characters\",\n            \"path\": \"username\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"1234\",\n            \"msg\": \"Password minimum length is 6 characters\",\n            \"path\": \"password\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Import User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "template",
+									"type": "file",
+									"src": "/C:/belajar/node/BE-Test-JasaMarga/User Template.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/import",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"import"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Import User Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "template",
+											"type": "file",
+											"src": "/C:/belajar/node/BE-Test-JasaMarga/User Template.xlsx"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/import",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"import"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2916"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b64-mrbrBEMf5fbVVZBmhD+yQM+c/S4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 14:50:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User was imported successfully\",\n    \"data\": {\n        \"user\": [\n            {\n                \"id\": 3,\n                \"fullname\": \"Larisa Michaias\",\n                \"username\": \"larisa\",\n                \"password\": \"$2b$10$jaNN7eL1XagjVK/UyHD2de3ViTNYNxJM8srau7u7RGxBviJRbZiNe\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:31.886Z\",\n                \"updated_at\": \"2023-06-25T14:50:31.886Z\",\n                \"last_login\": null\n            },\n            {\n                \"id\": 4,\n                \"fullname\": \"Maui Ethelyn\",\n                \"username\": \"mauieth\",\n                \"password\": \"$2b$10$h88my5Q6WYJbL0U/5BT7TOH48xjPOTFW/UMtIs.1S8Io3icT9sSd6\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:31.953Z\",\n                \"updated_at\": \"2023-06-25T14:50:31.953Z\",\n                \"last_login\": null\n            },\n            {\n                \"id\": 5,\n                \"fullname\": \"Dorine Laxman\",\n                \"username\": \"dorine\",\n                \"password\": \"$2b$10$hPQoYEAZWuuCtf0ytVpB2Od1Zyj2PKLTJ7AiIYmZ0uASA1MeV3J4G\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:32.019Z\",\n                \"updated_at\": \"2023-06-25T14:50:32.019Z\",\n                \"last_login\": null\n            },\n            {\n                \"id\": 6,\n                \"fullname\": \"Leah Chaggit\",\n                \"username\": \"leahcha\",\n                \"password\": \"$2b$10$D/qKa4BTYj02w3xlQ7P7r.JVAWH76zKpV0uYWjRPD4G6LxDVBwAQy\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:32.086Z\",\n                \"updated_at\": \"2023-06-25T14:50:32.086Z\",\n                \"last_login\": null\n            },\n            {\n                \"id\": 7,\n                \"fullname\": \"Monica Hallbjorg\",\n                \"username\": \"monica\",\n                \"password\": \"$2b$10$PSeBSJU7spCXpEDxVf6fHOkTqhSh13KBKcWMnn7OlAfcQnYpSteA6\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:32.153Z\",\n                \"updated_at\": \"2023-06-25T14:50:32.153Z\",\n                \"last_login\": null\n            },\n            {\n                \"id\": 8,\n                \"fullname\": \"Taran Kehinde\",\n                \"username\": \"tarank\",\n                \"password\": \"$2b$10$WspcpWMwRt/aMqynTQaIqOiAZvcKVqxQhZUDXjzEKTIV1zS5VL0Fu\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:32.219Z\",\n                \"updated_at\": \"2023-06-25T14:50:32.219Z\",\n                \"last_login\": null\n            },\n            {\n                \"id\": 9,\n                \"fullname\": \"Gyeong-Hui Bora\",\n                \"username\": \"gyeong\",\n                \"password\": \"$2b$10$7AVbIzR18291Epv6SO3/pOQe.5WkuMife.VorKPaHd8F7BV/EumC.\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:32.286Z\",\n                \"updated_at\": \"2023-06-25T14:50:32.286Z\",\n                \"last_login\": null\n            },\n            {\n                \"id\": 10,\n                \"fullname\": \"Dumi Sudarshan\",\n                \"username\": \"dumisu\",\n                \"password\": \"$2b$10$cslVqixJArPuM6lyMUvWVOuase2N5l8.OXCO9mX/mUBZufuQ0PwjW\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:32.353Z\",\n                \"updated_at\": \"2023-06-25T14:50:32.353Z\",\n                \"last_login\": null\n            },\n            {\n                \"id\": 11,\n                \"fullname\": \"Moustafa Padma\",\n                \"username\": \"moutafa\",\n                \"password\": \"$2b$10$0Wkb72qNSSbf/dEAPxObcuOGnTVUH.IOOp1yxFV091UO5aLMAjB02\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:32.421Z\",\n                \"updated_at\": \"2023-06-25T14:50:32.421Z\",\n                \"last_login\": null\n            },\n            {\n                \"id\": null,\n                \"fullname\": \"Moustafa Padma\",\n                \"username\": \"moutafa\",\n                \"password\": \"$2b$10$0Wkb72qNSSbf/dEAPxObcuOGnTVUH.IOOp1yxFV091UO5aLMAjB02\",\n                \"created_by\": \"achmadzackyr\",\n                \"updated_by\": \"achmadzackyr\",\n                \"created_at\": \"2023-06-25T14:50:32.421Z\",\n                \"updated_at\": \"2023-06-25T14:50:32.421Z\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Import User Unauthorize",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "template",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/import",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"import"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-qlEDz578Cl5ulN5rvUji5BiEIWw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 14:52:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Unauthorized\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Import User Empty Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "template",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/import",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"import"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-PiUtGXcV/KjWaxdNq+7H6bs06Mw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:02:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Template file is required\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Import User Invalid File Type",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "template",
+											"type": "file",
+											"src": "5141435345345.JPG"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/import",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"import"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-BPO41tnoKzpaGMM3Ctzlbc3vQ+k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:19:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Only accept .xlsx file\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Ruas",
+			"item": [
+				{
+					"name": "Read All Ruas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/ruas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ruas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Read All Ruas Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "490"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ea-HPZ2LznmUxGsL5/+WYCxtKbyIK4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:22:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas record list\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"ruas\": \"Pekanbaru - Dumai\",\n            \"km_awal\": \"0\",\n            \"km_akhir\": \"100\",\n            \"status\": true,\n            \"created_by\": \"achmadzackyr\",\n            \"updated_by\": \"achmadzackyr\",\n            \"created_at\": \"2023-06-25T15:21:15.503Z\",\n            \"updated_at\": \"2023-06-25T15:21:15.503Z\"\n        },\n        {\n            \"id\": 2,\n            \"ruas\": \"Pekanbaru - Dumai\",\n            \"km_awal\": \"101\",\n            \"km_akhir\": \"200\",\n            \"status\": true,\n            \"created_by\": \"achmadzackyr\",\n            \"updated_by\": \"achmadzackyr\",\n            \"created_at\": \"2023-06-25T15:22:42.829Z\",\n            \"updated_at\": \"2023-06-25T15:22:42.829Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Read All Ruas No Record",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-YUCVu0RdgVHqegR8RbNQHKeP52M\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:20:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas record is empty\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Read One Ruas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/ruas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ruas",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Read One Ruas Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "267"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10b-a2CbnaWdPnvsnovcrpgMQMXGuB8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:25:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas was found\",\n    \"data\": {\n        \"id\": 1,\n        \"ruas\": \"Pekanbaru - Dumai\",\n        \"km_awal\": \"0\",\n        \"km_akhir\": \"100\",\n        \"status\": true,\n        \"created_by\": \"achmadzackyr\",\n        \"updated_by\": \"achmadzackyr\",\n        \"created_at\": \"2023-06-25T15:21:15.503Z\",\n        \"updated_at\": \"2023-06-25T15:21:15.503Z\"\n    }\n}"
+						},
+						{
+							"name": "Read One Ruas Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas/9",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas",
+										"9"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-U2ihMimpCKoMqBthMu1f/G6lZL4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:26:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Ruas with id = 9 is not found\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Ruas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"0\",\r\n    \"km_akhir\": \"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ruas/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ruas",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Ruas Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"0\",\r\n    \"km_akhir\": \"100\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "297"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"129-98XCRAz4FIluN+Mn0jlDgMUs9y4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:21:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas was created successfully\",\n    \"data\": {\n        \"ruasCreate\": {\n            \"id\": 1,\n            \"ruas\": \"Pekanbaru - Dumai\",\n            \"km_awal\": \"0\",\n            \"km_akhir\": \"100\",\n            \"status\": true,\n            \"created_by\": \"achmadzackyr\",\n            \"updated_by\": \"achmadzackyr\",\n            \"created_at\": \"2023-06-25T15:21:15.503Z\",\n            \"updated_at\": \"2023-06-25T15:21:15.503Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Create Ruas Invalid Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"\",\r\n    \"km_akhir\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "238"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ee-LY4vWHBAHHzehwMsMfWsn5qr5Y0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:21:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid request\",\n    \"data\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Km awal is required\",\n            \"path\": \"km_awal\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Km akhir is required\",\n            \"path\": \"km_akhir\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Ruas",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"50\",\r\n    \"km_akhir\": \"100\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/ruas/update/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ruas",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Ruas Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"50\",\r\n    \"km_akhir\": \"100\",\r\n    \"status\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas/update/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas",
+										"update",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11d-16WTwpVhSzD71ZKExFKHOCzw+sU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:26:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas was udpated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"ruas\": \"Pekanbaru - Dumai\",\n        \"km_awal\": \"50\",\n        \"km_akhir\": \"100\",\n        \"status\": \"true\",\n        \"created_by\": \"achmadzackyr\",\n        \"updated_by\": \"achmadzackyr\",\n        \"created_at\": \"2023-06-25T15:21:15.503Z\",\n        \"updated_at\": \"2023-06-25T15:26:48.553Z\"\n    }\n}"
+						},
+						{
+							"name": "Update Ruas Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ruas\": \"Pekanbaru - Dumai\",\r\n    \"km_awal\": \"50\",\r\n    \"km_akhir\": \"100\",\r\n    \"status\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas/update/19",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas",
+										"update",
+										"19"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-9PjZalsSsfgNNutRSsSmDcKws74\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:27:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Ruas with id = 19 is not found\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Ruas",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/ruas/delete/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"ruas",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Ruas Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas/delete/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-yyJ4KMVB613bNXe0rcsiCt/ALgc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:27:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Ruas was deleted successfully\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Delete Ruas Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/ruas/delete/17",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"ruas",
+										"delete",
+										"17"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-DZaxICMoZfzVDV6IxOhlTsa+psw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Jun 2023 15:27:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Ruas with id = 17 is not found\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
